@@ -33,3 +33,6 @@ func _physics_process(delta):
 	
 func death():
 	position=Vector2(63,9)
+	
+func victory():
+	Engine.time_scale=0
