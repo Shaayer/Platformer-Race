@@ -58,5 +58,5 @@ func death():
 
 func victory():
 	$Label2.show()
-	$Label2.global_position=Vector2(1272,-11)
+	$Label2.global_position=Vector2(2315,-12)
 	Engine.time_scale=0
