@@ -12,7 +12,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var canJump=false
 func _ready():
 	$Area2D.player=self
-
+func _process(delta):
+	print(canJump)
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -44,7 +45,7 @@ func _physics_process(delta):
 			right.enabled=false
 			canJump=true
 		if canJump:
-			if Input.is_action_just_pressed("ui_up"):
+			if Input.is_action_just_pressed("w"):
 				velocity.y = JUMP_VELOCITY
 				canJump=false
 			else:
@@ -57,5 +58,5 @@ func death():
 
 func victory():
 	$Label2.show()
-	$Label2.global_position=Vector2(1254,45)
+	$Label2.global_position=Vector2(1272,-11)
 	Engine.time_scale=0

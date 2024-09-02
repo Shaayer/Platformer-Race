@@ -22,7 +22,6 @@ func _process(delta):
 	if distance>topCameraDistance:
 		$Camera2D.zoom.x=topCameraDistance/distance
 		$Camera2D.zoom.y=topCameraDistance/distance
-	print(distance)
 	
 func findDistance():
 	var x=abs(posPlayer2-posPlayer1)

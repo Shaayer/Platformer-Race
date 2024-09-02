@@ -497,10 +497,10 @@ metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Player"]
 visible = false
-offset_left = 1254.0
-offset_top = 45.0
-offset_right = 1900.0
-offset_bottom = 288.0
+offset_left = 1272.0
+offset_top = -11.0
+offset_right = 1918.0
+offset_bottom = 232.0
 theme_override_font_sizes/font_size = 100
 text = "Player 1 won!"
 
@@ -525,10 +525,10 @@ metadata/_edit_lock_ = true
 
 [node name="Label2" type="Label" parent="Player2"]
 visible = false
-offset_left = 1235.0
-offset_top = 45.0
-offset_right = 1881.0
-offset_bottom = 288.0
+offset_left = 1247.0
+offset_top = -9.0
+offset_right = 1893.0
+offset_bottom = 234.0
 theme_override_font_sizes/font_size = 100
 text = "Player 2 won!"
 
@@ -538,7 +538,7 @@ rotation = 1.5708
 target_position = Vector2(2.08165e-12, 12)
 
 [node name="Right2" type="RayCast2D" parent="Player2"]
-position = Vector2(2.08165e-12, 0)
+position = Vector2(2.08165e-12, -3)
 rotation = -1.5708
 target_position = Vector2(2.08165e-12, 12)
 
