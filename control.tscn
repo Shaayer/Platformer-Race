@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b1xkf3wa8koo7"]
+[gd_scene load_steps=32 format=3 uid="uid://b1xkf3wa8koo7"]
 
 [ext_resource type="Texture2D" uid="uid://bw3wdq18huv75" path="res://kenney_pixel-platformer-blocks/Tilemap/stone_packed.png" id="1_4icoy"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="1_ftaop"]
@@ -12,6 +12,9 @@
 [ext_resource type="Script" path="res://Area2D2.gd" id="10_b6xfx"]
 [ext_resource type="Script" path="res://Enemy2.gd" id="11_uggpo"]
 [ext_resource type="Script" path="res://Label.gd" id="12_h6cj0"]
+[ext_resource type="Script" path="res://UpDownEnemy.gd" id="13_auuwx"]
+[ext_resource type="Script" path="res://UpDownEnemy2.gd" id="14_hyugi"]
+[ext_resource type="Script" path="res://UpDownEnemy3.gd" id="15_55r3x"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6p8ub"]
 
@@ -695,6 +698,7 @@ script = ExtResource("12_h6cj0")
 
 [node name="UpDownEnemy" type="Area2D" parent="."]
 position = Vector2(3568, 792)
+script = ExtResource("13_auuwx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpDownEnemy"]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -716,6 +720,7 @@ autoplay = "real move"
 
 [node name="UpDownEnemy2" type="Area2D" parent="."]
 position = Vector2(3591, 792)
+script = ExtResource("14_hyugi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpDownEnemy2"]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -737,6 +742,7 @@ autoplay = "move"
 
 [node name="UpDownEnemy3" type="Area2D" parent="."]
 position = Vector2(3987, 627)
+script = ExtResource("15_55r3x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpDownEnemy3"]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -759,6 +765,9 @@ autoplay = "move"
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="area_entered" from="Area2D2" to="Area2D2" method="_on_area_entered"]
 [connection signal="area_entered" from="Enemy2" to="Enemy2" method="_on_area_entered"]
+[connection signal="area_entered" from="UpDownEnemy" to="UpDownEnemy" method="_on_area_entered"]
+[connection signal="area_entered" from="UpDownEnemy2" to="UpDownEnemy2" method="_on_area_entered"]
+[connection signal="area_entered" from="UpDownEnemy3" to="UpDownEnemy3" method="_on_area_entered"]
 
 [editable path="Player"]
 [editable path="Player2"]
