@@ -3,6 +3,7 @@ class_name Player1
 extends CharacterBody2D
 @onready var right = $Right
 @onready var left = $Left
+@onready var wall: RayCast2D = $Wall
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -19,6 +20,7 @@ func _physics_process(delta):
 	else:
 		left.enabled=true
 		right.enabled=true
+		canJump=false
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
@@ -31,18 +33,23 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if is_on_wall_only() and velocity.y>0:
+	#if is_on_wall_only() and velocity.y>0:
 		
-		if left.is_colliding():
+	if left.is_colliding():
 			left.enabled=false
 			right.enabled=true
 			canJump=true
-		if right.is_colliding():
+			print("left")
+	if right.is_colliding():
 			left.enabled=true
 			right.enabled=false
 			canJump=true
 			print("right")
-		if canJump:
+	if wall.is_colliding():
+		print("wall")
+	else:
+		canJump=false
+	if canJump and velocity.y>0:
 			if Input.is_action_just_pressed("ui_up"):
 				velocity.y = JUMP_VELOCITY
 				canJump=false
