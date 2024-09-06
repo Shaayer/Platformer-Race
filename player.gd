@@ -59,3 +59,12 @@ func victory():
 	$Label2.show()
 	$Label2.global_position=Vector2(3342+108,389+9)
 	Engine.time_scale=0
+	
+func disable():
+	hide()
+	set_collision_layer_value(1,false)
+
+func enable():
+	show()
+	set_collision_layer_value(1,true)
+	

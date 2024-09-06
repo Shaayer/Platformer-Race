@@ -19,7 +19,6 @@ func _physics_process(delta):
 	else:
 		left.enabled=true
 		right.enabled=true
-		canJump=false
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
