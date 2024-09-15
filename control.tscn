@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b1xkf3wa8koo7"]
+[gd_scene load_steps=35 format=3 uid="uid://b1xkf3wa8koo7"]
 
 [ext_resource type="Texture2D" uid="uid://bw3wdq18huv75" path="res://kenney_pixel-platformer-blocks/Tilemap/stone_packed.png" id="1_4icoy"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="1_ftaop"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://11ia1apqsi5w" path="res://icon.svg" id="3_2prb6"]
 [ext_resource type="Script" path="res://player.gd" id="3_b6ei8"]
 [ext_resource type="Script" path="res://PlayerArea.gd" id="5_g41vc"]
+[ext_resource type="Texture2D" uid="uid://bvadojubl8vbh" path="res://SomeCharacters_by_Ragewortt-svg (1).png" id="6_8tm54"]
 [ext_resource type="PackedScene" uid="uid://b15xiwyi573mn" path="res://enemy.tscn" id="7_7le2p"]
+[ext_resource type="Texture2D" uid="uid://b0cekmj14prms" path="res://SomeCharacters_by_Ragewortt-svg.png" id="7_hl74n"]
 [ext_resource type="Script" path="res://Finish.gd" id="9_a1yos"]
 [ext_resource type="Script" path="res://Area2D2.gd" id="10_b6xfx"]
 [ext_resource type="Script" path="res://Enemy2.gd" id="11_uggpo"]
@@ -15,6 +17,7 @@
 [ext_resource type="Script" path="res://UpDownEnemy.gd" id="13_auuwx"]
 [ext_resource type="Script" path="res://UpDownEnemy2.gd" id="14_hyugi"]
 [ext_resource type="Script" path="res://UpDownEnemy3.gd" id="15_55r3x"]
+[ext_resource type="AudioStream" uid="uid://2wt68hewulqn" path="res://song for platformer race real.mp3" id="16_vhiyd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6p8ub"]
 
@@ -395,7 +398,7 @@ layer_0/tile_data = PackedInt32Array(0, 393216, 6, 65536, 393216, 7, 131072, 393
 position = Vector2(72, 10)
 safe_margin = 0.1
 
-[node name="Area2D" parent="Player" index="2"]
+[node name="Area2D" parent="Player" index="1"]
 script = ExtResource("5_g41vc")
 metadata/_edit_lock_ = true
 
@@ -426,12 +429,19 @@ target_position = Vector2(36, 0)
 hit_from_inside = true
 metadata/_edit_lock_ = true
 
+[node name="Image" type="Sprite2D" parent="Player"]
+position = Vector2(3.27826e-07, 3.8743e-07)
+scale = Vector2(0.116984, 0.116984)
+texture = ExtResource("6_8tm54")
+
 [node name="Player2" parent="." instance=ExtResource("2_lrtyq")]
 position = Vector2(108, 10)
 script = ExtResource("3_b6ei8")
 
-[node name="Icon" parent="Player2" index="0"]
-rotation = 3.14159
+[node name="Image" type="Sprite2D" parent="Player2"]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.116883, 0.116883)
+texture = ExtResource("7_hl74n")
 
 [node name="Area2D" parent="Player2" index="2"]
 script = ExtResource("5_g41vc")
@@ -586,6 +596,12 @@ libraries = {
 "": SubResource("AnimationLibrary_66idh")
 }
 autoplay = "move"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_vhiyd")
+autoplay = true
+bus = &"music"
+parameters/looping = true
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
 [connection signal="area_entered" from="Area2D2" to="Area2D2" method="_on_area_entered"]
