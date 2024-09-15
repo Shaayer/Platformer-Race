@@ -23,10 +23,18 @@ func _process(delta):
 	if Input.is_action_pressed("2"):
 		singlePlayer=false
 		$Player2.enable()
+		$Player.death()
+		$Player2.death()
 		$Label.time=0.0
 	if Input.is_action_pressed("1"):
 		singlePlayer=true
 		$Player2.disable()
+		$Player.death()
+		$Label.time=0.0
+	if Input.is_action_pressed("r"):
+		$Player.death()
+		$Player2.death()
+		$Label.time=0.0
 		
 	
 	if singlePlayer==false:
