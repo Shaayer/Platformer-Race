@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b1xkf3wa8koo7"]
+[gd_scene load_steps=37 format=3 uid="uid://b1xkf3wa8koo7"]
 
 [ext_resource type="Texture2D" uid="uid://bw3wdq18huv75" path="res://kenney_pixel-platformer-blocks/Tilemap/stone_packed.png" id="1_4icoy"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="1_ftaop"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Area2D2.gd" id="10_b6xfx"]
 [ext_resource type="Script" path="res://Enemy2.gd" id="11_uggpo"]
 [ext_resource type="Script" path="res://Label.gd" id="12_h6cj0"]
+[ext_resource type="Texture2D" uid="uid://cbch2dea4obis" path="res://finishLine.png" id="12_wdatv"]
 [ext_resource type="Script" path="res://UpDownEnemy.gd" id="13_auuwx"]
 [ext_resource type="Script" path="res://UpDownEnemy2.gd" id="14_hyugi"]
 [ext_resource type="Script" path="res://UpDownEnemy3.gd" id="15_55r3x"]
@@ -403,11 +404,12 @@ script = ExtResource("5_g41vc")
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Player"]
-offset_left = 3342.0
-offset_top = 389.0
-offset_right = 3988.0
-offset_bottom = 632.0
-theme_override_font_sizes/font_size = 100
+visible = false
+offset_left = 7544.0
+offset_top = 350.0
+offset_right = 7872.0
+offset_bottom = 424.0
+theme_override_font_sizes/font_size = 50
 text = "Player 1 won!"
 
 [node name="Left" type="RayCast2D" parent="Player"]
@@ -453,7 +455,7 @@ offset_left = 7182.0
 offset_top = 248.0
 offset_right = 7828.0
 offset_bottom = 491.0
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 50
 text = "Player 2 won!"
 
 [node name="Left2" type="RayCast2D" parent="Player2"]
@@ -477,10 +479,11 @@ metadata/_edit_lock_ = true
 [node name="Enemy" parent="." instance=ExtResource("7_7le2p")]
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(7983, 502)
+position = Vector2(7998, 499)
 script = ExtResource("9_a1yos")
 
 [node name="Icon" type="Sprite2D" parent="Area2D"]
+visible = false
 modulate = Color(0.613869, 0.485961, 0.0957746, 1)
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.421875, 13.1719)
@@ -490,6 +493,12 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_ba1dk")
+metadata/_edit_lock_ = true
+
+[node name="FinishLine" type="Sprite2D" parent="Area2D"]
+position = Vector2(-0.750138, -1.14441e-05)
+scale = Vector2(2.81578, 10)
+texture = ExtResource("12_wdatv")
 metadata/_edit_lock_ = true
 
 [node name="Area2D2" type="Area2D" parent="."]
@@ -524,10 +533,10 @@ autoplay = "move"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 6884.0
-offset_top = 153.0
-offset_right = 7136.0
-offset_bottom = 311.0
+offset_left = 7667.0
+offset_top = 380.0
+offset_right = 7919.0
+offset_bottom = 538.0
 theme_override_font_sizes/font_size = 100
 script = ExtResource("12_h6cj0")
 

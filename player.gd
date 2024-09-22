@@ -84,7 +84,7 @@ func enable():
 	
 	
 func victory():
-	$Label2.global_position=Vector2(7182,248)
+	$Label2.global_position=Vector2(7544,350)
 	$Label2.show()
 	Engine.time_scale=0
 	

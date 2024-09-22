@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cx7miglw1172x"]
 
-[ext_resource type="Texture2D" uid="uid://11ia1apqsi5w" path="res://icon.svg" id="1_ul3vq"]
+[ext_resource type="Texture2D" uid="uid://uwqly45w17j1" path="res://box.png" id="1_i8krx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jd5b8"]
 size = Vector2(98, 127)
@@ -9,13 +9,13 @@ size = Vector2(98, 127)
 position = Vector2(7809, 691)
 mass = 0.5
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-0.5, 0)
-scale = Vector2(0.757812, 1)
-texture = ExtResource("1_ul3vq")
-metadata/_edit_lock_ = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_jd5b8")
+metadata/_edit_lock_ = true
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(-3.48128e-05, -1.00005)
+scale = Vector2(0.435554, 0.56)
+texture = ExtResource("1_i8krx")
 metadata/_edit_lock_ = true
