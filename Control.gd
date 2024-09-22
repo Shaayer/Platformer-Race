@@ -1,10 +1,12 @@
 extends Control
 var distance=0
+var boxScene= preload("res://box.tscn")
 # 2 player platformer, wasd and arrows keys, race
 var posPlayer1;
 var posPlayer2;
 var posPlayer1y;
 var posPlayer2y;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Player2.disable()
@@ -35,6 +37,13 @@ func _process(delta):
 		$Player.death()
 		$Player2.death()
 		$Label.time=0.0
+		var oldBox=$Box
+		oldBox.name="Delete"
+		oldBox.queue_free()
+		var box = boxScene.instantiate()
+		add_child(box)
+		
+		
 		
 	
 	if singlePlayer==false:

@@ -40,7 +40,6 @@ func _physics_process(delta):
 	if direction==1:
 		$Image.flip_h=true
 	velocity.x = lerpf(velocity.x, 0,0.95)
-	print(velocity.x)
 	#if is_on_wall_only() and velocity.y>0:
 		
 	if left.is_colliding():
@@ -85,6 +84,10 @@ func enable():
 	
 	
 func victory():
-	$Label2.global_position=Vector2(6368,291)
+	$Label2.global_position=Vector2(7182,248)
 	$Label2.show()
 	Engine.time_scale=0
+	
+func _on_push_hit_box_body_entered(body: Node2D) -> void:
+	if body is RigidBody2D:
+		body.apply_impulse(velocity)

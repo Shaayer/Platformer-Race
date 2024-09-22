@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bp7brqsuvqqrb"]
+[gd_scene load_steps=5 format=3 uid="uid://bp7brqsuvqqrb"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_bjmr6"]
+[ext_resource type="Script" path="res://push_hit_box.gd" id="2_ulegc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6q1f"]
 size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwlh8"]
+size = Vector2(22, 16)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(51, 9)
@@ -17,4 +21,12 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_l6q1f")
+metadata/_edit_lock_ = true
+
+[node name="PushHitBox" type="Area2D" parent="."]
+script = ExtResource("2_ulegc")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushHitBox"]
+shape = SubResource("RectangleShape2D_fwlh8")
 metadata/_edit_lock_ = true
