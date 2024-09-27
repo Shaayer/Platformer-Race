@@ -58,4 +58,4 @@ r={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.2397, 0.415395, 0.51, 1)
+environment/defaults/default_clear_color=Color(0.445, 0.479833, 0.5, 1)
